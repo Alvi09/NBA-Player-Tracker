@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -9,8 +8,6 @@
         <!-- Linking CSS style sheets so we know this is the style we want to apply -->
         <link rel="stylesheet" href="/static/nav.css">
         <link rel="stylesheet" href="/static/index.css">
-        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins"> -->
-
 
         <!-- Changing website icon -->
         <link rel="icon" href="https://cdn.nba.com/manage/2021/10/GettyImages-1228132003.png">
@@ -33,19 +30,18 @@
                     </datalist>
                 </form>
             </label>
-
         </div>
 
         <div id="content-wrapper">
             <div id="picture_wrapper">
                 <img id="player_profile_image" src="{{ image_url }}">
-
             </div>
 
             <div id="data_wrapper">
                 {% set playerName = player_name %}
-                {% block content %}
 
+                <!-- Displaying the flash message if the user enters an invalid name -->
+                {% block content %}
                     {% for message in get_flashed_messages() %}
                         <div class="alert" id="alert-message">
                             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
@@ -58,24 +54,10 @@
                 {% endblock %}
             </div>
         </div>
-
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        // let player_name;
-        // document.getElementById('userInput').onkeypress = function(e) {
-        //     if(e.keyCode === 13) {
-        //         // event.preventDefault(); // stops page from reloading
-        //
-        //         player_name = document.getElementById("userInput").value;
-        //         console.log(player_name)
-        //
-        //         // console.log(window.location.host + "/?player=" + String(player_name))
-        //         // window.history.replaceState("", "", "?player=" + String(player_name));
-        //     }
-        // }
-
         setTimeout(function() {
             $('#alert-message').fadeOut();
         }, 5000); // time in milliseconds
@@ -87,8 +69,5 @@
             values += '<option value="' + list[i] + '" />';
         }
         document.getElementById("players").innerHTML = values;
-
-
     </script>
-
 </html>

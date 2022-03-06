@@ -22,11 +22,11 @@ html {
 #data_wrapper {
     padding-bottom: 20px;
 }
+
 #content-wrapper {
     display: flex;
     justify-content: space-around;
 }
-
 
 .alert {
     border-radius: 10px;

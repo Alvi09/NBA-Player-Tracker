@@ -15,9 +15,7 @@ def contact_page():
 # home page
 @app.route('/', methods=["GET", "POST"])
 def main():
-    # Once the query, after the ?, gets whatever the query is inputted (i.e ?player=Bradley Beal), Bradley Beal will
-    # be our argument
-    name = request.args.get("search_box")
+    name = request.args.get("search_box")   # search_box = <First_Last>, and doing this gets us the first and last name (search_box is due to the input's name being "search_box" in index.html)
 
     if name is None:
         name = "LeBron James"
@@ -33,5 +31,5 @@ def main():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    app.run(host='127.0.0.1', port=8000, debug=True)
 

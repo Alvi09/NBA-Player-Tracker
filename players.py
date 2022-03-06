@@ -1,9 +1,6 @@
 import requests
 import pandas as pd
-# import sqlite3
 from nba_api.stats.static import players
-
-
 
 # endponts: https://github.com/swar/nba_api/tree/master/docs/nba_api/stats/endpoints
 
@@ -37,8 +34,6 @@ def get_lastName():
     for i in range(len(LIST_OF_DICT_PLAYERS)):
         last_names.append(LIST_OF_DICT_PLAYERS[i]['last_name'])
     return last_names
-
-
 
 def get_playerID(name):
     for i in range(len(LIST_OF_DICT_PLAYERS)):
@@ -110,13 +105,3 @@ def creating_dataframe(playerID):
     df.index = range(1, len(df) + 1)
 
     return df, image_url
-
-
-# establish SQLite connection
-# database = "player_database.db"
-# conn = sqlite3.connect(database)
-
-# # save df data to SQlite database
-# df.to_sql(name=player_name, con=conn, if_exists="replace")
-# conn.close()
-
